@@ -1,8 +1,11 @@
 import express from "express";
 import cors from "cors";
+import serverless from "serverless-http";
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+
+// Commented because I use Vercel. If not Vercel, this code is necessary.
+// const PORT = process.env.PORT || 3000;
 
 app.use(
     cors({
@@ -41,10 +44,11 @@ app.post("/box", (req: any, res: any) => {
     res.json(data);
 });
 
-app.listen(PORT, () => {
-    console.log(`Environment PORT: ${process.env.PORT}`);
-    console.log(`Server is running on port ${PORT}`);
-});
+// Commented because I use Vercel. Vercel handles the server. If not Vercel, this code is necessary.
+// app.listen(PORT, () => {
+//     console.log(`Environment PORT: ${process.env.PORT}`);
+//     console.log(`Server is running on port ${PORT}`);
+// });
 
 function computeBoxTriangulation(
     length: number,
@@ -92,3 +96,6 @@ function computeBoxTriangulation(
 
     return { vertices, triangles };
 }
+
+// For Vercel: export the app wrapped with serverless
+export default serverless(app);
