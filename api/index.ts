@@ -1,6 +1,5 @@
 import express from "express";
 import cors from "cors";
-import serverless from "serverless-http";
 
 const app = express();
 
@@ -96,6 +95,3 @@ function computeBoxTriangulation(
 
     return { vertices, triangles };
 }
-
-// For Vercel: export the app wrapped with serverless
-export default serverless(app);
