@@ -13,7 +13,8 @@
     "dependencies": {
         "cors": "^2.8.5",
         "express": "^4.21.0",
-        "serverless-http": "^3.2.0"
+        "serverless-http": "^3.2.0",
+        "typescript": "^5.6.2"
     },
     "description": "",
     "devDependencies": {
@@ -21,7 +22,6 @@
         "@types/express": "^5.0.0",
         "@types/node": "^22.7.2",
         "nodemon": "^3.1.7",
-        "ts-node": "^10.9.2",
-        "typescript": "^5.6.2"
+        "ts-node": "^10.9.2"
     }
 }
