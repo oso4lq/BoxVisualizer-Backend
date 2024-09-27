@@ -6,5 +6,10 @@
             "use": "@vercel/node"
         }
     ],
-  "buildCommand": "npm run build"
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "/api/index.ts"
+        }
+    ]
 }
