@@ -1,5 +1,6 @@
 import express from "express";
 import cors from "cors";
+// import serverless from "serverless-http";
 
 const app = express();
 
@@ -8,8 +9,10 @@ const app = express();
 
 app.use(
     cors({
-        origin: "http://localhost:3000", // Development URL
-        // origin: "https://box-visualizer.vercel.app", // Frontend URL
+        origin: [
+            "http://localhost:3000", // Development URL
+            "https://box-visualizer.vercel.app" // Production URL
+        ],
         methods: ["GET", "POST", "OPTIONS"],
         allowedHeaders: ["Content-Type"],
     }),
@@ -95,3 +98,9 @@ function computeBoxTriangulation(
 
     return { vertices, triangles };
 }
+
+// For Vercel: export the app wrapped with serverless
+// export default serverless(app);
+
+// Export the Express app
+export default app;
