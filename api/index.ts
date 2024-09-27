@@ -7,14 +7,14 @@ const app = express();
 // Commented because I use Vercel. If not Vercel, this code is necessary.
 // const PORT = process.env.PORT || 3000;
 
-app.use(
-    cors({
-        origin: "http://localhost:3000", // Development URL
-        // origin: "https://box-visualizer.vercel.app", // Frontend URL
-        methods: ["GET", "POST", "OPTIONS"],
-        allowedHeaders: ["Content-Type"],
-    }),
-);
+// app.use(
+//     cors({
+//         origin: "http://localhost:3000", // Development URL
+//         // origin: "https://box-visualizer.vercel.app", // Frontend URL
+//         methods: ["GET", "POST", "OPTIONS"],
+//         allowedHeaders: ["Content-Type"],
+//     }),
+// );
 app.use(express.json());
 
 // GET route for root
